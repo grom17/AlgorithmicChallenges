@@ -65,7 +65,7 @@ namespace LeetCode.Problems.AdventOfCode.Day4.Services
         {
             var strValue = GetValueByKey(fields, "hgt");
 
-            var value = new string(strValue?.Where(char.IsDigit).ToArray());
+            var value = new string(strValue?.Where(char.IsDigit).ToArray() ?? Array.Empty<char>());
 
             var height = new Height
             {

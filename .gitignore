@@ -97,3 +97,4 @@ build
 *.iml
 local.properties
 out/
+*.sln.DotSettings.user
