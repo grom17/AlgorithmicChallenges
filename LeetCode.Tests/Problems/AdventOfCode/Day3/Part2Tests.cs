@@ -1,9 +1,9 @@
 namespace LeetCode.Tests.Problems.AdventOfCode.Day3
 {
     using System;
-    using System.Diagnostics;
     using LeetCode.Problems.AdventOfCode.Day3;
     using NUnit.Framework;
+    using static Helpers.StopwatchHelper;
 
     [TestFixture]
     public class Part2Tests
@@ -26,16 +26,11 @@ namespace LeetCode.Tests.Problems.AdventOfCode.Day3
                 .Split(Environment.NewLine);
             
             const int expectedResult = 336;
-            
-            var sw = new Stopwatch();
-            sw.Start();
 
             // Act
-            var result = Part2Solution.Run(input);
+            var (result, timeElapsed) = RunWithStopwatch(() => Part2Solution.Run(input));
 
-            sw.Stop();
-            
-            TestContext.Out.WriteLine($"Elapsed={sw.ElapsedMilliseconds}");
+            TestContext.Out.WriteLine($"Elapsed={timeElapsed}");
             TestContext.Out.WriteLine($"Result={result}");
             
             // Assert
@@ -47,16 +42,11 @@ namespace LeetCode.Tests.Problems.AdventOfCode.Day3
         {
             // Arrange
             var input = TestData.GetDay3Input();
-            
-            var sw = new Stopwatch();
-            sw.Start();
 
             // Act
-            var result = Part2Solution.Run(input);
-
-            sw.Stop();
+            var (result, timeElapsed) = RunWithStopwatch(() => Part2Solution.Run(input));
             
-            TestContext.Out.WriteLine($"Elapsed={sw.ElapsedMilliseconds}");
+            TestContext.Out.WriteLine($"Elapsed={timeElapsed}");
             TestContext.Out.WriteLine($"Result={result}");
         }
     }

@@ -2,6 +2,7 @@
 {
     using LeetCode.Problems.Easy.ReverseInteger;
     using NUnit.Framework;
+    using static Helpers.StopwatchHelper;
 
     [TestFixture]
     public class ReverseIntegerTests
@@ -53,8 +54,11 @@
         public void Test(int input, int expectedResult, ESolutionType solutionType)
         {
             // Arrange & Act
-            var result = Solution.Run(input, solutionType);
+            var (result, timeElapsed) = RunWithStopwatch(() => Solution.Run(input, solutionType));
 
+            TestContext.Out.WriteLine($"Elapsed={timeElapsed}");
+            TestContext.Out.WriteLine($"Result={result}");
+            
             // Assert
             Assert.AreEqual(expectedResult, result);
         }

@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Tests
 {
-    using System.Diagnostics;
     using NUnit.Framework;
+    using static Helpers.StopwatchHelper;
 
     [TestFixture]
     public class SampleTests
@@ -9,16 +9,11 @@
         [TestCase(true, true)]
         public void Test(bool value, bool expectedResult)
         {
-            var sw = new Stopwatch();
-
-            sw.Start();
-            
             // Arrange & Act
-            var result = value;
+            var (result, timeElapsed) = RunWithStopwatch(() => value);
 
-            sw.Stop();
-            
-            TestContext.Out.WriteLine($"Elapsed={sw.ElapsedMilliseconds}");
+            TestContext.Out.WriteLine($"Elapsed={timeElapsed}");
+            TestContext.Out.WriteLine($"Result={result}");
 
             // Assert
             Assert.AreEqual(expectedResult, result);

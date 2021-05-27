@@ -1,8 +1,8 @@
 namespace LeetCode.Tests.Problems.AdventOfCode.Day1
 {
-    using System.Diagnostics;
     using LeetCode.Problems.AdventOfCode.Day1;
     using NUnit.Framework;
+    using static Helpers.StopwatchHelper;
 
     [TestFixture]
     public class TwoNumbersTests
@@ -13,16 +13,11 @@ namespace LeetCode.Tests.Problems.AdventOfCode.Day1
             // Arrange
             var input = new[] { 1721, 979, 366, 299, 675, 1456 };
             const int expectedResult = 514579;
-            
-            var sw = new Stopwatch();
-            sw.Start();
 
             // Act
-            var result = TwoNumbers.Run(input);
+            var (result, timeElapsed) = RunWithStopwatch(() => TwoNumbers.Run(input));
 
-            sw.Stop();
-            
-            TestContext.Out.WriteLine($"Elapsed={sw.ElapsedMilliseconds}");
+            TestContext.Out.WriteLine($"Elapsed={timeElapsed}");
             TestContext.Out.WriteLine($"Result={result}");
             
             // Assert
@@ -34,16 +29,11 @@ namespace LeetCode.Tests.Problems.AdventOfCode.Day1
         {
             // Arrange
             var input = TestData.GetDay1Input();
-            
-            var sw = new Stopwatch();
-            sw.Start();
 
             // Act
-            var result = TwoNumbers.Run(input);
+            var (result, timeElapsed) = RunWithStopwatch(() => TwoNumbers.Run(input));
 
-            sw.Stop();
-            
-            TestContext.Out.WriteLine($"Elapsed={sw.ElapsedMilliseconds}");
+            TestContext.Out.WriteLine($"Elapsed={timeElapsed}");
             TestContext.Out.WriteLine($"Result={result}");
         }
     }
