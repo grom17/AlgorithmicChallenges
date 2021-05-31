@@ -1,7 +1,7 @@
-﻿namespace AlgorithmicChallenges.Tests.Problems.HackerRank.InterviewPreparationKit.Array
+﻿namespace AlgorithmicChallenges.Tests.Problems.HackerRank.InterviewPreparationKit.Array.TwoDimArrayDs
 {
     using System.Collections.Generic;
-    using AlgorithmicChallenges.Problems.HackerRank.InterviewPreparationKit.Array;
+    using AlgorithmicChallenges.Problems.HackerRank.InterviewPreparationKit.Array.TwoDimArrayDs;
     using NUnit.Framework;
     using static Helpers.StopwatchHelper;
     

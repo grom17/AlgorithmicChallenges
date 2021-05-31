@@ -1,4 +1,4 @@
-﻿namespace AlgorithmicChallenges.Problems.HackerRank.InterviewPreparationKit.Array
+﻿namespace AlgorithmicChallenges.Problems.HackerRank.InterviewPreparationKit.Array.TwoDimArrayDs
 {
     using System.Collections.Generic;
     using System.Linq;
