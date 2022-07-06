@@ -31,4 +31,16 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Problems\LeetCode\Easy\BestTimeToBuyAndSellStock\TestCases\Simple.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problems\LeetCode\Easy\BestTimeToBuyAndSellStock\TestCases\NoTransactions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problems\LeetCode\Easy\BestTimeToBuyAndSellStock\TestCases\BigInput.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
