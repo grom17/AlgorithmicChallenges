@@ -1,7 +1,8 @@
-﻿namespace AlgorithmicChallenges.Tests
+﻿using AlgorithmicChallenges.Problems.Sample;
+using NUnit.Framework;
+
+namespace AlgorithmicChallenges.Tests.Problems.Sample
 {
-    using AlgorithmicChallenges.Problems.Sample;
-    using NUnit.Framework;
     using static Helpers.StopwatchHelper;
 
     [TestFixture]
