@@ -1,4 +1,4 @@
-namespace AlgorithmicChallenges.Problems
+namespace AlgorithmicChallenges
 {
     internal static class Constants
     {
