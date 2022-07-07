@@ -9,7 +9,8 @@ namespace AlgorithmicChallenges.Problems.AdventOfCode.Day4.Services
     {
         public PassportValidator()
         {
-            CascadeMode = CascadeMode.Stop;
+            ClassLevelCascadeMode = CascadeMode.Stop;
+            RuleLevelCascadeMode = CascadeMode.Stop;
             
             RuleFor(pass => pass.BirthYear)
                 .NotNull()

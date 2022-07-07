@@ -1,4 +1,6 @@
-﻿namespace AlgorithmicChallenges.Problems.HackerRank.WarmupChallenges.Staircase
+﻿using System;
+
+namespace AlgorithmicChallenges.Problems.HackerRank.WarmupChallenges.Staircase
 {
     using System.Text;
 
@@ -13,10 +15,10 @@
             for (var i = 1; i <= n; i++)
             {
                 row += "#";
-                sb.Append($"{row.PadLeft(n)}\n");
+                sb.Append($"{row.PadLeft(n)}{Environment.NewLine}");
             }
 
-            return sb.ToString().TrimEnd('\n');
+            return sb.ToString().TrimEnd('\n').TrimEnd('\r');
         }
     }
 }
