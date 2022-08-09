@@ -6,7 +6,7 @@ namespace AlgorithmicChallenges.Tests.Problems.LeetCode.Easy
     using static Helpers.StopwatchHelper;
 
     [TestFixture]
-    public class SampleTests
+    public class ValidAnagramTests
     {
         [TestCase("anagram", "nagaram", ESolutionType.SortCharsAndCompareStrings, ExpectedResult = true)]
         [TestCase("rat", "car", ESolutionType.SortCharsAndCompareStrings, ExpectedResult = false)]
