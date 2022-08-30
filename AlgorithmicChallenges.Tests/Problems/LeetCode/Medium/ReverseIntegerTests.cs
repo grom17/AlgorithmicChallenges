@@ -1,7 +1,7 @@
-﻿using AlgorithmicChallenges.Problems.LeetCode.Easy.ReverseInteger;
+﻿using AlgorithmicChallenges.Problems.LeetCode.Medium.ReverseInteger;
 using NUnit.Framework;
 
-namespace AlgorithmicChallenges.Tests.Problems.LeetCode.Easy
+namespace AlgorithmicChallenges.Tests.Problems.LeetCode.Medium
 {
     using static Helpers.StopwatchHelper;
 

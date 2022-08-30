@@ -1,4 +1,4 @@
-namespace AlgorithmicChallenges.Problems.LeetCode.Easy.ReverseInteger
+namespace AlgorithmicChallenges.Problems.LeetCode.Medium.ReverseInteger
 {
     public enum ESolutionType
     {
