@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AlgorithmicChallenges.Structures;
 
@@ -12,6 +13,34 @@ public class BinaryTree
             {
                 Add(intValue);
             }
+        }
+    }
+    
+    public BinaryTree(IEnumerable<int> tree)
+    {
+        foreach (var value in tree)
+        {
+            Add(value);
+        }
+    }
+
+    public static IEnumerable<int> ConvertToLevelOrderedEnumeration(TreeNode? root)
+    {
+        var queue = new Queue<TreeNode?>();
+        queue.Enqueue(root);
+
+        while (queue.Any())
+        {
+            var node = queue.Dequeue();
+
+            if (node == null)
+            {
+                continue;
+            }
+                
+            yield return node.Value;
+            queue.Enqueue(node.Left);
+            queue.Enqueue(node.Right);
         }
     }
 
