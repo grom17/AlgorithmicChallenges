@@ -20,14 +20,25 @@ namespace AlgorithmicChallenges.Problems.LeetCode.Easy.KthLargestElementInAStrea
         {
             return solutionType switch
             {
-                ESolutionType.KthLargest => Execute(k, nums, values),
+                ESolutionType.MySolution => MySolution(k, nums, values),
+                ESolutionType.Best => Best(k, nums, values),
                 _ => throw new ArgumentOutOfRangeException(nameof(solutionType), solutionType, null)
             };
         }
         
-        private static IEnumerable<int> Execute(int k, int[] nums, int[] values)
+        private static IEnumerable<int> MySolution(int k, int[] nums, int[] values)
         {
-            var obj = new KthLargest(k, nums);
+            var obj = new MyKthLargest(k, nums);
+            
+            foreach (var val in values)
+            {
+                yield return obj.Add(val);
+            }
+        }
+        
+        private static IEnumerable<int> Best(int k, int[] nums, int[] values)
+        {
+            var obj = new BestKthLargest(k, nums);
             
             foreach (var val in values)
             {
@@ -36,13 +47,13 @@ namespace AlgorithmicChallenges.Problems.LeetCode.Easy.KthLargestElementInAStrea
         }
     }
 
-    public class KthLargest
+    public class MyKthLargest
     {
         private readonly int _k;
 
         private readonly List<int> _nums;
         
-        public KthLargest(int k, IEnumerable<int> nums)
+        public MyKthLargest(int k, IEnumerable<int> nums)
         {
             _k = k;
             _nums = nums.ToList();
@@ -52,10 +63,10 @@ namespace AlgorithmicChallenges.Problems.LeetCode.Easy.KthLargestElementInAStrea
         {
             _nums.Add(val);
 
-            return GetLargest();
+            return GetKthLargest();
         }
 
-        private int GetLargest()
+        private int GetKthLargest()
         {
             var priorityQueue = new PriorityQueue<int, int>();
 
@@ -70,6 +81,38 @@ namespace AlgorithmicChallenges.Problems.LeetCode.Easy.KthLargestElementInAStrea
             }
             
             return priorityQueue.Peek();
+        }
+    }
+    
+    public class BestKthLargest
+    {
+        private readonly PriorityQueue<int, int> _priorityQueue = new();
+        
+        private readonly int _k;
+        
+        public BestKthLargest(int k, IEnumerable<int> nums)
+        {
+            _k = k;
+            
+            foreach (var num in nums)
+            {
+                Add(num);
+            }
+        }
+    
+        public int Add(int val)
+        {
+            if (_priorityQueue.Count < _k)
+            {
+                _priorityQueue.Enqueue(val, val);
+            }
+            else if (val > _priorityQueue.Peek())
+            {
+                _priorityQueue.Dequeue();
+                _priorityQueue.Enqueue(val, val);
+            }
+
+            return _priorityQueue.Peek();
         }
     }
 }

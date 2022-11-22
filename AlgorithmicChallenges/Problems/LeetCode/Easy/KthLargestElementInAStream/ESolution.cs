@@ -2,6 +2,8 @@ namespace AlgorithmicChallenges.Problems.LeetCode.Easy.KthLargestElementInAStrea
 {
     public enum ESolutionType
     {
-        KthLargest
+        MySolution,
+        
+        Best
     }
 }
