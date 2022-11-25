@@ -55,6 +55,47 @@ public class ListNode
         return null;
     }
     
+    public static ListNode? ConvertToCycledLinkedList(int[] input, int pos)
+    {
+        if (pos == -1)
+        {
+            return ConvertToLinkedList(input);
+        }
+
+        if (!input.Any())
+        {
+            return null;
+        }
+        
+        var head = new ListNode();
+        var current = head;
+        ListNode? cycledNode = null;
+        for (var index = 0; index < input.Length; index++)
+        {
+            var value = input[index];
+            current!.val = value;
+
+            if (index == pos)
+            {
+                cycledNode = current;
+            }
+
+            if (index < input.Length - 1)
+            {
+                current.next = new ListNode();
+            }
+            else
+            {
+                current.next = cycledNode;
+                break;
+            }
+
+            current = current.next;
+        }
+
+        return head;
+    }
+    
     public IEnumerable<int> ConvertToArray()
     {
         return ConvertToArray(this);
